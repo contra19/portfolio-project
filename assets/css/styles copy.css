@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: lightgrey;
+    font-family: Helvetica, Arial, Georgia, Tahoma;
+}
+
+.header {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.title {    
+    margin: 0;
+    font-size: 36px;
+    display:inline;
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+.navbar {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    background-color: azure;
+    font-size: 20px;
+    padding-right: 20px;    
+}
+
+.navbar ul {    
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    display: inline;
+    margin: 5px;
+}
+
+.navbar a {
+    text-decoration: none;    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.section h2 {
+    margin-right: auto;
+}
+
+.separator {
+    border-left: 2px solid navy;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-end; /* Align content from the right */
+    max-width: 50%; /* Ensure content doesn't extend past 50% of the page to the left */
+}
+
+.about-me-content,
+.contact-info {
+    max-width: 50%; /* Ensure content doesn't extend past 50% of the page to the left */
+}
+
+.work-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work-images a {
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+
+.work-images img {
+    width: 100%;
+    height: auto;
+}
+
+.work-images a:nth-child(n+2) {
+    flex-basis: calc(50% - 10px); /* Make images 2-5 equal size in two columns */
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.work-images img {
+    width: 100%;
+    height: auto;
+}
+
+/* Media queries for responsiveness */
+@media screen and (min-width: 769px) {
+    /* Adjustments for larger screens */
+    .section {
+        width: 50%; /* Set the width to 50% of the viewport */
+    }
+
+    .work-images a {
+        width: calc(50% - 10px); /* Set the width of each image to 50% minus the margin */
+    }
+
+    .separator {
+        border-left: 2px solid navy;
+        height: 100%;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .header {
+        height: auto; /* Allow header to grow based on content */
+        padding: 20px 20px; /* Adjust padding */
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center align items */
+    }
+    
+    .profile-img {
+        margin-bottom: 10px; /* Add some spacing */
+    }
+
+    .title {
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Reset transform */
+    }
+
+    .navbar {
+        position: static; /* Remove absolute positioning */
+        bottom: auto; /* Reset bottom position */
+        right: auto; /* Reset right position */
+        margin-top: 10px; /* Add some spacing */
+    }
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .separator {
+        border-left: none;
+        border-top: 2px solid navy;
+        width: 100%;
+        height: 20px;
+        margin: 20px 0;
+    }
+    
+    .work-images a {
+        width: calc(50% - 10px);
+    }
+}
