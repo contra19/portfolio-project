@@ -1,14 +1,22 @@
+/* Define page colors as variables */
+:root {
+    --light: cornflowerblue;
+    --dark: navy;
+    --light-text: white;
+    --background: lightgrey;
+}
+
 /* General styles */
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: lightgrey;
+    background-color: var(--background);
     font-family: Helvetica, Arial, Georgia, Tahoma;
 }
 
 .header {
-    background-color: cornflowerblue;
+    background-color: var(--light);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,7 +45,7 @@ body {
     position: absolute;
     bottom: 0px;
     right: 20px;
-    background-color: lightgrey;
+    background-color: var(--background);
     font-size: 20px;
     padding-right: 20px;    
 }
@@ -59,26 +67,31 @@ body {
   
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: flex-start;
     padding: 20px;
+    box-sizing: border-box;
 }
   
-.column {
+.column-left {
     flex-grow: 0;
     flex-shrink: 0;
     width: 35%;
-    border-right: 2px solid navy;
     padding: 10px;
+    box-sizing: border-box;
 }
   
-.column:last-child {
-    border: none;
+.column-right {
+    border-left: 2px solid var(--dark);
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 10px;
+    box-sizing: border-box;
 }
   
 .heading {
     text-align: center;
-    font-size: 50px;;
+    font-size: 50px;
+    margin: 0
 }
   
 .content {
@@ -89,7 +102,6 @@ body {
     display: flex;
     font-size: 150%;
     max-height:100%;
-    max-width: 400px;
     text-align: left;
 }
 
@@ -97,7 +109,7 @@ body {
     max-width: 100%;
     height: auto;
     margin: 5px;
-    border: 3px solid white;
+    border: 3px solid var(--light-text);
 }
   
 .content img.large {
@@ -107,20 +119,72 @@ body {
 
 .content .row {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    margin-top: 10px;
+    justify-content: space-between;
 }
 
 .content .row img {
     max-width: calc(50% - 10px);
-    margin: 5px; /* Add some space between images */
+    margin: 5px;
 }
+
+.content .image-container img {
+    max-width: 100%; 
+    height: auto;
+    width: 100%;
+}
+
+.image-container {
+    position: relative;
+  }
+  
+.image-container .overlay-text {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    background-color: var(--dark);
+    color: var(--light-text);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+.content .image-container:first-child {
+    margin-bottom: 10px;
+}
+
+.content .row .image-container {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.content img:hover {
+    box-shadow: 0 0 30px var(--light);
+    transition: box-shadow 0.3s ease;
+}
+
 
 /* Responsive styles for viewports 768px and smaller */
 @media screen and (max-width: 768px) {
     .column {
-        width: 100%; /* Adjust column width to take up full width */
-        border-right: none; /* Remove right border */
+        width: 100%;
+        border-right: none;
+        border-top: 2px solid var(--dark);
+        margin-left: 0 10px 0 10px;
+    }
+
+    .content .row .image-container {
+        flex-basis: 100%;
+    }
+
+    .content .row img {
+        max-width: 90%;
+        margin: 5px;
+    }
+
+    .image-container .overlay-text {
+        bottom: 15px;
+        left: 25px;
+        padding: 10px;
     }
 }
