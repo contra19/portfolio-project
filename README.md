@@ -1,17 +1,24 @@
-# Portfolio Project
-## Description
-This is our second project and a portfolio of the original work I have created. This portfolio is for use to display the work I have created and to allow other students
-and prospective employers to view what I have done. This will be a living site and will have additions as I creatye more applications. 
+# Rob Wisniewski Portfolio
 
-## Installation
-N/A
+## A showcase of projects/websites that Rob has created
+
+## Description
+Welcome to my showcase! This is where you will be abl;e to find a portfolio of the projects I am currently working on or have worked on in the past. My intent is for this to be a place for mew to display my talents and for others, especially prospective employers/customers, to find samples of my work. 
+
+These works use several technologies and more will be added as I experiment more with others. Currently HTML and CSS are utilized with JavaScript coming in the near future. 
 
 ## Usage
-This application will be used to display my works as they become published and available.
+There is no installation necessary for this project as you can go directly to https://contra19.github.io/portfolio-project/ to see my portfolio in an interactive way. You can use the page to see my projects and go directly to them. If you have a specific project you want to look at in mind and want to skip going to the page, you will find a list of all the included projects below. 
+
+![example image of website](image.png)
+
+## List of included projects
+1. Prework Study Guiide (https://contra19.github.io/portfolio-project/)
+2. Horiseon Recode (https://contra19.github.io/module_1_challenge/)
 
 ## Credits
 Collaboration credit to my classmates Katelyn Hardigree and NIck Zamboni who provided verbal input for me to verify and adjust my code accordingly as well as provide some
-inspiration.
+inspiration. Their input helped me to shape the page that is being presented. Links to their profiles will be included here as soon as I am able to get them. 
 
 ## License
 The MIT License
